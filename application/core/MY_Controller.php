@@ -46,10 +46,6 @@ class Application extends CI_Controller {
 
             if((!$this->Agent->checkround($status_xml->round))AND($status_xml->state == 2 or $status_xml->state == 3)){
               
-              echo "Add";
-              
-              echo $status_xml->state;
-              
             
             $this->load->model('Transaction');
             $this->load->library('session');
