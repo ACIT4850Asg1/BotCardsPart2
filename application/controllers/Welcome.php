@@ -15,7 +15,24 @@ class Welcome extends Application {
 	
 	public function index()
 	{
+            //$this->register();
+            // Load all Libraries and Models used.
+            $this->register();
+		        $this->load->model('Players');
+		        $this->load->model('Game');
+            $this->load->library('session');
+            $this->load->library('table');
 
+            $this->load->model('Agent');
+            $url = 'botcards.jlparry.com/status';
+            //open connection
+            $status = curl_init();
+            //set the url, number of POST vars, POST data
+            curl_setopt($status,CURLOPT_URL,$url);
+            curl_setopt($status, CURLOPT_RETURNTRANSFER, true);
+            //execute post
+            $result = curl_exec($status);
+            $xml = new SimpleXMLElement($result);
             
 
             // Attempt to load user name from session data

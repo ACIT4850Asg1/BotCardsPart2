@@ -15,9 +15,10 @@ class Register extends Application {
 
 	
 	public function index()
+
 	{
             // Load all Libraries and Models used.
-
+$this->register();
     $this->load->library('session');
 
             $this->data['user'] = $this->session->userdata('username'); // Apply the username to the user section of page.

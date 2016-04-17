@@ -21,6 +21,7 @@ class Player_page extends Application {
             $this->load->library('session');
             $this->load->model('Players');
             $this->load->model('Transaction');
+            $this->register();
 
                 //Get current players transactions
             $tran = $this->Transaction->get_player_trans($this->session->userdata('username'));
