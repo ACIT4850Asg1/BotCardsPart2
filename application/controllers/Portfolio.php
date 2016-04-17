@@ -15,6 +15,7 @@ class Portfolio extends Application {
 		        $this->load->model('Game');
             $this->load->model('Transaction');
             $this->load->helper('form');
+            $this->register();
 
             //Load session data
             $user = $this->session->userdata('username');
